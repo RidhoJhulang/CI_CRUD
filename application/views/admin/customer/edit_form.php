@@ -37,7 +37,6 @@
 							enctype="multipart/form-data" >
 
 							<input type="hidden" name="id" value="<?php echo $customer->customer_id?>" />
-
 							<div class="form-group">
 								<label for="name">Name*</label>
 								<input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>"

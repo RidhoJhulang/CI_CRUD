@@ -50,7 +50,7 @@
 							<div class="form-group">
 								<label for="price">Price</label>
 								<input class="form-control <?php echo form_error('price') ? 'is-invalid':'' ?>"
-								 type="number" name="price" min="0" placeholder="Product price" value="<?php echo $product->price ?>" />
+								 type="text" name="price" min="0" placeholder="Product price" value="<?php echo $product->price ?>" />
 								<div class="invalid-feedback">
 									<?php echo form_error('price') ?>
 								</div>

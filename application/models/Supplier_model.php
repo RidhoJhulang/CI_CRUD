@@ -1,13 +1,13 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_model extends CI_Model
+class Supplier_model extends CI_Model
 {
-    private $_table = "customers";
+    private $_table = "suppliers";
 
-    public $customer_id;
+    public $supplier_id;
     public $name;
-    public $phone_number;
     public $address;
+    public $phone_number;
     
 
     public function rules()
@@ -18,13 +18,13 @@ class Customer_model extends CI_Model
             'label' => 'Name',
             'rules' => 'required'],
 
-            ['field' => 'phone_number',
-            'label' => 'Phone_number',
-            'rules' => 'numeric'],
-            
             ['field' => 'address',
             'label' => 'Address',
-            'rules' => 'required']
+            'rules' => 'required'],
+
+            ['field' => 'phone_number',
+            'label' => 'Phone_number',
+            'rules' => 'numeric']
         ];
     }
 
@@ -35,33 +35,33 @@ class Customer_model extends CI_Model
     
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["customer_id" => $id])->row();
+        return $this->db->get_where($this->_table, ["supplier_id" => $id])->row();
     }
 
     public function save()
     {
         $post = $this->input->post();
-        $this->customer_id = $post["id"];
+        $this->supplier_id = uniqid();
         $this->name = $post["name"];
-		$this->phone_number = $post["phone_number"];
         $this->address = $post["address"];
+        $this->phone_number = $post["phone_number"];
         $this->db->insert($this->_table, $this);
     }
 
     public function update()
     {
         $post = $this->input->post();
-        $this->customer_id = $post["id"];
+        $this->supplier_id = $post["id"];
         $this->name = $post["name"];
-        $this->phone_number = $post["phone_number"];
         $this->address = $post["address"];
+        $this->phone_number = $post["phone_number"];
 		
-        $this->db->update($this->_table, $this, array('customer_id' => $post['id']));
+        $this->db->update($this->_table, $this, array('supplier_id' => $post['id']));
     }
 
     public function delete($id)
     {
-        return $this->db->delete($this->_table, array("customer_id" => $id));
+        return $this->db->delete($this->_table, array("supplier_id" => $id));
 	}
 
 }

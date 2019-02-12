@@ -26,47 +26,38 @@
 
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/products/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+						<a href="<?php echo site_url('admin/suppliers/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
 					</div>
 					<div class="card-body">
 
-						<form action="<?php base_url('admin/product/add') ?>" method="post" enctype="multipart/form-data" >
+						<form action="<?php base_url('admin/supplier/add') ?>" method="post" enctype="multipart/form-data" >
 							<div class="form-group">
 								<label for="name">Name*</label>
 								<input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>"
-								 type="text" name="name" placeholder="Product name" />
+								 type="text" name="name" placeholder="Supplier name" />
 								<div class="invalid-feedback">
 									<?php echo form_error('name') ?>
 								</div>
 							</div>
-
 							<div class="form-group">
-								<label for="price">Price*</label>
-								<input class="form-control <?php echo form_error('price') ? 'is-invalid':'' ?>"
-								 type="text" name="price" min="0" placeholder="Product price" />
+								<label for="address">Address</label>
+								<textarea class="form-control <?php echo form_error('address') ? 'is-invalid':'' ?>"
+								 name="address" placeholder="Supplier address..."></textarea>
 								<div class="invalid-feedback">
-									<?php echo form_error('price') ?>
+									<?php echo form_error('address') ?>
 								</div>
 							</div>
-
-
 							<div class="form-group">
-								<label for="name">Photo</label>
-								<input class="form-control-file <?php echo form_error('price') ? 'is-invalid':'' ?>"
-								 type="file" name="image" />
+								<label for="phone_number">Phone Number</label>
+								<input class="form-control <?php echo form_error('phone_number') ? 'is-invalid':'' ?>"
+								 type="text" name="phone_number" placeholder="Supplier phone number" />
 								<div class="invalid-feedback">
-									<?php echo form_error('image') ?>
+									<?php echo form_error('phone_number') ?>
 								</div>
 							</div>
+							
 
-							<div class="form-group">
-								<label for="name">Size*</label>
-								<textarea class="form-control <?php echo form_error('description') ? 'is-invalid':'' ?>"
-								 name="description" placeholder="Product description"></textarea>
-								<div class="invalid-feedback">
-									<?php echo form_error('description') ?>
-								</div>
-							</div>
+				
 
 							<input class="btn btn-success" type="submit" name="btn" value="Save" />
 						</form>
